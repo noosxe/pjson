@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FILE=$1
+
+if [ X"" != X"$FILE" ] && [ -f $FILE ];
+then
+    echo "Reading json file"
+    echo "-----------------"
+    cat $FILE | python -mjson.tool 
+else
+    echo "Not a file!"
+fi
